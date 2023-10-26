@@ -1,0 +1,55 @@
+﻿@model Student_Mvc.Models.Student
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-primary">Add Student</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Create">
+                        <div class="form-group">
+                            <label asp-for="First_Name"></label>
+                            <input type="text" asp-for="First_Name" class="form-control" placeholder="Enter Employee First Name" />
+                            @Html.ValidationMessageFor(model => model.First_Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Last_Name"></label>
+                            <input type="text" asp-for="Last_Name" class="form-control" placeholder="Enter Employee Last Name" />
+                            @Html.ValidationMessageFor(model => model.Last_Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Class"></label>
+                            <input type="text" asp-for="Class" class="form-control" placeholder="Enter Employee Class" />
+                            @Html.ValidationMessageFor(model => model.Class, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Roll_No"></label>
+                            <input type="text" asp-for="Roll_No" class="form-control" placeholder="Enter Employee Roll No" />
+                            @Html.ValidationMessageFor(model => model.Roll_No, "", new { @class = "text-danger" })
+
+                            @*@if(string.IsNullOrEmpty(ViewBag.RollNumberExists)){
+
+        }*@
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Percentage"></label>
+                            <input type="text" asp-for="Percentage" class="form-control" placeholder="Enter Employee Percentage" />
+                            @Html.ValidationMessageFor(model => model.Percentage, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+
+                            <input type="submit" value="submit" class="btn btn-sm btn-outline-success float-right" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
